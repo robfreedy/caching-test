@@ -1,6 +1,6 @@
 from prefect import flow, task, get_run_logger
-from random import random
 from prefect.cache_policies import TASK_SOURCE, RUN_ID
+import random
 
 @task(cache_policy=TASK_SOURCE+RUN_ID)
 def random_int():
